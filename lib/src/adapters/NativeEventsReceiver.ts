@@ -21,13 +21,21 @@ export class NativeEventsReceiver {
   }
 
   public registerNotificationReceived(callback: (notification: Notification) => void): EmitterSubscription {
-    return this.emitter.addListener('notificationReceived', (payload) => {
+    return this.emitter.addListener('notificationReceived', (payload: Object) => {
       callback(this.notificationFactory.fromPayload(payload));
     });
   }
 
   public registerPushKitNotificationReceived(callback: (event: object) => void): EmitterSubscription {
     return this.emitter.addListener('pushKitNotificationReceived', callback);
+  }
+
+  public registerOnStartCallAction(callback: (event: object) => void): EmitterSubscription {
+    return this.emitter.addListener('onStartCallAction', callback);
+  }
+
+  public registerOnEndCallAction(callback: (event: object) => void): EmitterSubscription {
+    return this.emitter.addListener('onEndCallAction', callback);
   }
 
   public registerNotificationOpened(callback: (notification: Notification, completion: () => void, actionResponse?: NotificationActionResponse) => void): EmitterSubscription {

@@ -6,7 +6,8 @@ static NSString* const RNPushKitRegistered           = @"pushKitRegistered";
 static NSString* const RNNotificationReceived        = @"notificationReceived";
 static NSString* const RNNotificationOpened          = @"notificationOpened";
 static NSString* const RNPushKitNotificationReceived = @"pushKitNotificationReceived";
-
+static NSString* const RNOnStartCallAction = @"onStartCallAction";
+static NSString* const RNOnEndCallAction = @"onEndCallAction";
 
 @interface RNEventEmitter : RCTEventEmitter <RCTBridgeModule>
 

@@ -6,8 +6,7 @@ import {
 
 export class EventsRegistryIOS {
   constructor(
-    private nativeEventsReceiver: NativeEventsReceiver) 
-  {}
+    private nativeEventsReceiver: NativeEventsReceiver) { }
 
   public registerPushKitRegistered(callback: (event: RegisteredPushKit) => void): EmitterSubscription {
     return this.nativeEventsReceiver.registerPushKitRegistered(callback);
@@ -15,5 +14,13 @@ export class EventsRegistryIOS {
 
   public registerPushKitNotificationReceived(callback: (event: object) => void): EmitterSubscription {
     return this.nativeEventsReceiver.registerPushKitNotificationReceived(callback);
+  }
+
+  public registerOnStartCallAction(callback: (event: object) => void): EmitterSubscription {
+    return this.nativeEventsReceiver.registerOnStartCallAction(callback);
+  }
+
+  public registerOnEndCallAction(callback: (event: object) => void): EmitterSubscription {
+    return this.nativeEventsReceiver.registerOnEndCallAction(callback);
   }
 }

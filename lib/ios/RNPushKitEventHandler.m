@@ -11,4 +11,12 @@
     [RNEventEmitter sendEvent:RNPushKitNotificationReceived body:payload];
 }
 
+- (void)onStartCallAction:(NSDictionary *)payload {
+    [RNEventEmitter sendEvent:RNOnStartCallAction body:payload];
+}
+
+- (void)onEndCallAction:(NSDictionary *)payload {
+    [RNEventEmitter sendEvent:RNOnEndCallAction body:payload];
+}
+
 @end

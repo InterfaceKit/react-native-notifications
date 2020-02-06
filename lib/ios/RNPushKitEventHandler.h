@@ -7,4 +7,8 @@
 
 - (void)didReceiveIncomingPushWithPayload:(NSDictionary *)payload;
 
+- (void)onStartCallAction:(NSDictionary *)payload;
+
+- (void)onEndCallAction:(NSDictionary *)payload;
+
 @end
