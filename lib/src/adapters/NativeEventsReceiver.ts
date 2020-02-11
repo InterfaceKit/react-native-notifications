@@ -21,7 +21,7 @@ export class NativeEventsReceiver {
   }
 
   public registerNotificationReceived(callback: (notification: Notification) => void): EmitterSubscription {
-    return this.emitter.addListener('notificationReceived', (payload: Object) => {
+    return this.emitter.addListener('notificationReceived', (payload: object) => {
       callback(this.notificationFactory.fromPayload(payload));
     });
   }
